@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="css/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="js/date.js"></script>
+		<title>Ang-task</title>
+	</head>
+	<body>
+		<h1 class="h1">My first Angular task</h1>
+		<div ng-controller="myController" class="wrap">
+			<div class="table table-responsive">
+				<table class="table table-bordered">
+					<tr> 
+		        		<th ng-repeat="fieldMeta in metaData">{{fieldMeta.Name}}</th>
+		        		<th>Actions</th>
+		            </tr>
+
+		            <tr ng-repeat="row in rows">
+		                <td ng-repeat="fieldMeta in metaData">
+		                	{{ row[fieldMeta.Name] }}
+		                </td>
+		                <td>
+		                	<button type="button" class="btn btn-default" ng-click="edit(row)">Edit</button>
+		                	<button type="button" class="btn btn-default" ng-click="remove(row)">Delete</button>
+		                </td>
+		            </tr>
+	  			</table>
+	  		</div>
+
+  			<button type="button" class="btn btn-default" ng-click="add(row)">AddNewItem</button>
+
+			<div ng-show="selectedRow != null"  class="edit-form">
+				<div class="form-field" ng-repeat="fieldMeta in metaData">{{fieldMeta.Name}}
+					<input type="text" ng-model="selectedRow[fieldMeta.Name]" check-type="{{fieldMeta.DataType}}">
+				</div>
+				<button type="button" class="btn btn-default" ng-show="rows.indexOf(selectedRow) == -1" class="submit_btn" ng-click="submit()">Submit</button>
+  			</div>
+			
+			
+
+
+		</div>
+	</body>
+</html>

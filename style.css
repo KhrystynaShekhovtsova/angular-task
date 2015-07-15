@@ -1,0 +1,27 @@
+body {
+	margin: auto;
+	width: 60%;
+}
+h1 {
+	text-align: center;
+}
+.wrap {
+	margin-top: 10px;
+	margin-left: 10px;
+	font-family: Helvetica;
+	font-size: 18px;
+}
+.table {
+    border: 1px solid white;
+}
+th {
+	background-color: #AEB4B8;
+}
+td {
+	background-color: #F2F2F2;
+}
+.form-field {
+	width: 70px;
+	margin-bottom: 5px;
+}
+ 
